@@ -1,9 +1,9 @@
 provider "azurerm" {
   features {}
 
-  subscription_id = var.subscription_id
-  client_id       = var.client_id
-  client_secret   = var.client_secret
-  tenant_id       = var.tenant_id
+subscription_id = ${{ secrets.ARM_SUBSCRIPTION_ID }}
+client_id       = ${{ secrets.ARM_CLIENT_ID }}
+client_secret   = ${{ secrets.ARM_CLIENT_SECRET }}
+tenant_id       = ${{ secrets.ARM_TENANT_ID }}
 }
 
