@@ -1,0 +1,14 @@
+- name: Configure Azure NSG Rules
+  hosts: localhost
+  tasks:
+    - name: Open SSH port
+      azure_rm_securityrule:
+        name: Allow-SSH
+        resource_group: devnetops-rg
+        security_group: devnetops-nsg
+        access: Allow
+        protocol: Tcp
+        direction: Inbound
+        priority: 1001
+        destination_port_range: 22
+        source_address_prefix: '*'
